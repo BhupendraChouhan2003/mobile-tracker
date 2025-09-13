@@ -22,11 +22,20 @@
               let lat = pos.coords.latitude;
               let lng = pos.coords.longitude;
               sendLocation(lat, lng);
+              // For user feedback [Optional]:
+              document.body.insertAdjacentHTML(
+                "beforeend",
+                `<div>Sent location: ${lat}, ${lng}</div>`
+              );
             },
             function (err) {
-              alert("Cannot get location: " + err.message);
+              alert(
+                "Cannot get location: " +
+                  err.message +
+                  "\n\n1. Make sure GPS/location is enabled.\n2. Move outdoors for better signal.\n3. Increase allowed location time in device settings."
+              );
             },
-            { enableHighAccuracy: true, maximumAge: 5000, timeout: 10000 }
+            { enableHighAccuracy: true, maximumAge: 5000, timeout: 20000 }
           );
         } else {
           alert("Geolocation is not supported on this device.");
@@ -35,3 +44,5 @@
     </script>
   </body>
 </html>
+
+
