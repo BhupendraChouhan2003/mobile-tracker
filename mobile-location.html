@@ -8,7 +8,7 @@
     <button onclick="startTracking()">Start Tracking</button>
     <script>
       function sendLocation(lat, lng) {
-        fetch("https://3217d8f10320.ngrok-free.app/update-location", {
+        fetch("https://e9e9a45f9934.ngrok-free.app/update-location", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ latitude: lat, longitude: lng }),
@@ -44,5 +44,6 @@
     </script>
   </body>
 </html>
+
 
 
